@@ -12,7 +12,7 @@ class Pizza(models.Model):
 
 class Topping(models.Model):
     """Pizza toppings that belongs to pizzas."""
-    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    pizza = models.ForeignKey(Pizza, on_delete=models.SET_NULL,null=True)
     name = models.CharField(max_length=100)
 
     def __str__(self):
